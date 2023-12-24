@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Item Management</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .input-group {
+      width: 100%; /* Set the width of the input group to 100% */
+    }
+    #searchItem {
+      width: 75%; /* Set the width of the search input to 75% */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form id="itemForm">
+    <div class="form-group">
+      <label for="itemId">Item ID:</label>
+      <input type="text" class="form-control" id="itemId" placeholder="Enter Item ID">
+    </div>
+    <div class="form-group">
+      <label for="itemName">Item Name:</label>
+      <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name">
+    </div>
+    <div class="form-group">
+      <label for="itemPrice">Item Price:</label>
+      <input type="text" class="form-control" id="itemPrice" placeholder="Enter Item Price">
+    </div>
+    <div class="form-group">
+      <label for="itemDescription">Item Description:</label>
+      <textarea class="form-control" id="itemDescription" placeholder="Enter Item Description"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" id="ItemSavebtn">Save</button>
+    <button type="button" class="btn btn-danger" >Delete</button>
+    <button type="button" class="btn btn-warning" >Update</button>
+    
+  </form>
+</div>
+
+<script src="../Jq/jquery.min.js"></script>
+<script src="../Js/item.js"></script>
+
+
+</body>
+</html>

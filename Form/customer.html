@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Customer Management</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .input-group {
+      width: 100%; /* Set the width of the input group to 100% */
+    }
+    #searchItem {
+      width: 75%; /* Set the width of the search input to 75% */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <form id="customerForm">
+    <div class="form-group">
+      <label for="customerIdInput">Customer ID:</label>
+      <input type="text" class="form-control" id="customerIdInput" placeholder="Enter Customer ID">
+    </div>
+    <div class="form-group">
+      <label for="customerNameInput">Customer Name:</label>
+      <input type="text" class="form-control" id="customerNameInput" placeholder="Enter Customer Name">
+    </div>
+    <div class="form-group">
+      <label for="customerFromInput">Customer From:</label>
+      <input type="text" class="form-control" id="customerFromInput" placeholder="Enter Customer From">
+    </div>
+    <button type="button" class="btn btn-primary" id="Cust_Save_Button">Save</button>
+    <button type="button" class="btn btn-danger" id="Cust_Delete_Button">Delete</button>
+    <button type="button" class="btn btn-warning" id="Cust_Update_Button">Update</button>
+    <button type="button" class="btn btn-secondary" id="Cust_Search_Button">Search</button>
+
+  </form>
+</div>
+
+<script src="../Jq/jquery.min.js"></script>
+<script src="../Js/customer.js"></script>
+
+</body>
+</html>

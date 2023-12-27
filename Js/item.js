@@ -1,5 +1,4 @@
 $("#ItemSavebtn").on('click', () => {
-    console.log("ffbf")
     var item_Id = $("#itemId").val();
     var item_Name = $("#itemName").val();
     var item_Price = $("#itemPrice").val();
@@ -37,3 +36,71 @@ $("#ItemSavebtn").on('click', () => {
     sendAJAX(ItemObjectJson)
 
 });
+
+
+
+
+
+$('#ItemUpdateBtn').on('click', () => {
+    var item_Id = $("#itemId").val();
+    var item_Name = $("#itemName").val();
+    var item_Price = $("#itemPrice").val();
+    var item_Desc = $("#itemDescription").val();
+
+
+    const itemUpdateObject = {
+        itemId : item_Id,
+        itemName : item_Name,
+        itemPrice : item_Price,
+        itemDesc : item_Desc
+    }
+
+    const item_Update_Json_Obj =JSON.stringify(itemUpdateObject)
+
+    const sendAJAX = (Item_Upd_Object_Json) => {
+        const http = new XMLHttpRequest();
+        http.onreadystatechange = () =>{
+            //Validation
+            if (http.readyState == 4 && http.status == 200) {
+                alert("Sucess")
+            }else{
+                alert("Faild")
+            }
+        }
+        http.open("PUT","http://localhost:8080/Shop_Back_End_war_exploded/item",true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(Item_Upd_Object_Json)
+    }
+
+    sendAJAX(item_Update_Json_Obj)
+})
+
+
+//
+// $("#Item_Search_Button").on('click',() =>{
+//     var searchItemId = $("#itemId").val();
+//
+//     const searchItemObject = {
+//         itemId : searchItemId
+//     }
+//
+//     const searchItemJsonObj = JSON.stringify(searchItemObject)
+//
+//     const sendAJAX = (searchItemJsonObj) => {
+//         const http = new XMLHttpRequest();
+//         http.onreadystatechange = () => {
+//             //Validation
+//             if (http.readyState == 4 && http.status == 200) {
+//                 alert("Sucess")
+//             } else {
+//                 alert("Faild")
+//             }
+//         }
+//         http.open("GET","http://localhost:8080/Shop_Back_End_war_exploded/item",true)
+//         http.setRequestHeader("Content-Type","application/json")
+//         http.send(searchItemJsonObj)
+//     }
+//
+//     sendAJAX(searchItemJsonObj)
+//
+// })

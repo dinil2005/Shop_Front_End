@@ -76,6 +76,38 @@ $('#ItemUpdateBtn').on('click', () => {
 })
 
 
+
+$("#ItemDeleteBtn").on('click' , () => {
+    var Delete_item_Id = $("#itemId").val();
+
+    const  delete_Item_Obj = {
+        itemId : Delete_item_Id
+    }
+
+    const  delet_Item_Obj_Json = JSON.stringify(delete_Item_Obj)
+
+
+    const sendAJAX = (Item_del_Object_Json) => {
+        const http = new XMLHttpRequest();
+        http.onreadystatechange = () =>{
+            //Validation
+            if (http.readyState == 4 && http.status == 200) {
+                alert("Sucess")
+            }else{
+                alert("Faild")
+            }
+        }
+        http.open("DELETE","http://localhost:8080/Shop_Back_End_war_exploded/item",true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(Item_del_Object_Json)
+    }
+
+    sendAJAX(delet_Item_Obj_Json)
+})
+
+
+
+
 //
 // $("#Item_Search_Button").on('click',() =>{
 //     var searchItemId = $("#itemId").val();
